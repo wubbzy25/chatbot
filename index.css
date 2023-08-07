@@ -1,5 +1,6 @@
 /* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -39,6 +40,7 @@ body.show-chatbot .chatbot-toggler span:first-child {
 body.show-chatbot .chatbot-toggler span:last-child {
   opacity: 1;
 }
+
 .chatbot {
   position: fixed;
   right: 35px;
@@ -78,10 +80,11 @@ body.show-chatbot .chatbot {
 }
 header h2 {
   font-size: 1.4rem;
+  display: none;
 }
 .chatbot .chatbox {
   overflow-y: auto;
-  height: 460px;
+  height: 420px;
   padding: 30px 20px 100px;
 }
 .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
@@ -99,11 +102,73 @@ header h2 {
   display: flex;
   list-style: none;
 }
+.chatbox .chat2 {
+  display: flex;
+  list-style: none;
+}
 .chatbox .outgoing {
   margin: 20px 0;
   justify-content: flex-end;
 }
+.client-form {
+  display: none;
+  position: absolute;
+}
+.advisor-form {
+  display: none;
+  position: absolute;
+}
+.text {
+  text-align: center;
+  position: absolute;
+  top: 13vmax;
+  left: 10vmax;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  border: none;
+  cursor: pointer;
+  padding: 10px 40px;
+  background-color: #ffb800;
+  border-radius: 15px;
+  justify-content: center;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: absolute;
+  top: 19vmax;
+  left: 5vmax;
+  visibility: visible;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+.visibility {
+  visibility: 1;
+}
+
 .chatbox .incoming span {
+  width: 32px;
+  display: none;
+  height: 32px;
+  color: #fff;
+  cursor: default;
+  text-align: center;
+  line-height: 32px;
+  align-self: flex-end;
+  background: #ba68c8;
+  border-radius: 4px;
+  margin: 0 10px 7px 0;
+}
+
+.chatbox .incoming2 span {
   width: 32px;
   height: 32px;
   color: #fff;
@@ -116,6 +181,17 @@ header h2 {
   margin: 0 10px 7px 0;
 }
 .chatbox .chat p {
+  display: none;
+  white-space: pre-wrap;
+  padding: 12px 16px;
+  border-radius: 10px 10px 0 10px;
+  max-width: 75%;
+  color: #fff;
+  font-size: 0.95rem;
+  background: #ffb800;
+}
+
+.chatbox .chat2 p {
   white-space: pre-wrap;
   padding: 12px 16px;
   border-radius: 10px 10px 0 10px;
@@ -137,6 +213,7 @@ header h2 {
 }
 .chatbot .chat-input {
   display: flex;
+  display: none;
   gap: 5px;
   position: absolute;
   bottom: 0;
@@ -189,5 +266,99 @@ header h2 {
   }
   .chatbot header span {
     display: block;
+  }
+}
+
+form {
+  max-width: 300px;
+  overflow-y: auto;
+  margin: 1px auto;
+  padding: 10px 60px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+a {
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 26px;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 1px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+}
+.buton {
+  padding: 15px;
+  color: #fff;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  margin-bottom: 10px;
+}
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  margin-bottom: 1px;
+}
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+@media screen and (min-width: 480px) {
+  form {
+    max-width: 480px;
   }
 }
